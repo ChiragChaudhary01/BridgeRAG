@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from config.config import settings
-from api.v1.routes import router as document_router
+from api.v1.endpoints import router as document_router
 from schema.response import success_response, APIResponse
 
 app = FastAPI(
