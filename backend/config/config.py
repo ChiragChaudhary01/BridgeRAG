@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     GOOGLE_API_KEY: str
+    GROQ_API_KEY: str | None = None
     PROJECT_NAME: str = "BridgeRAG Document AI Assistant"
 
     model_config = SettingsConfigDict(

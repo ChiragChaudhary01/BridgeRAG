@@ -21,16 +21,16 @@ class VectorStoreManager:
         for byte in digest:
             values.append((byte / 255.0) * 2 - 1)
 
-        while len(values) < 3072:
-            values.extend(values[:3072 - len(values)])
+        while len(values) < 768:
+            values.extend(values[:768 - len(values)])
 
-        return values[:3072]
+        return values[:768]
 
     def _generate_embedding(self, text: str) -> list[float]:
         """Generate dense vector embeddings using Gemini when available, else use a local fallback."""
         try:
             response = self.ai_client.models.embed_content(
-                model="gemini-embedding-001",
+                model="text-embedding-004",
                 contents=text
             )
             return response.embeddings[0].values
