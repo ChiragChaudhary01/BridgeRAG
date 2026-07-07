@@ -6,3 +6,4 @@ pypdf==4.2.0
 python-multipart==0.0.9
 chromadb==0.5.3
 groq==1.5.0
+numpy==1.26.4
